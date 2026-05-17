@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html >
+<head>
+   <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+
+
+
+
+    <div class="dashboard-container">
+        <header class="main-header">
+            <h1><i class="fa-solid fa-table-cells"></i> Mini-Project 3: Table Generator</h1>
+        </header>
+
+        <div class="grid-layout">
+            <div class="left-column">
+                
+                <div class="card border-blue">
+                    <h2 class="card-title"><i class="fa-solid fa-border-all"></i> Create Table Structure</h2>
+                    <div class="code-block">
+                        <pre><span class="keyword">const</span> table = document.createElement(<span class="string">'table'</span>);
+table.className = <span class="string">'data-table'</span>;</pre>
+                    </div>
+                </div>
+
+                <div class="card border-purple">
+                    <h2 class="card-title">Add Rows & Cells</h2>
+                    <div class="code-block">
+                        <pre><span class="keyword">function</span> <span class="function">addRow</span>(rowData) {
+  <span class="keyword">const</span> row = document.createElement(<span class="string">'tr'</span>);
+  rowData.forEach(text => {
+    <span class="keyword">const</span> cell = document.createElement(<span class="string">'td'</span>);
+    cell.textContent = text;
+    row.appendChild(cell);
+  });
+  table.appendChild(row);
+}</pre>
+                    </div>
+                </div>
+
+                <div class="card border-green">
+                    <h2 class="card-title"><i class="fa-solid fa-feather"></i> Style with CSS</h2>
+                    <div class="code-block">
+                        <pre>table.style.borderCollapse = <span class="string">'collapse'</span>;
+table.style.width = <span class="string">'100%'</span>;
+td.style.padding = <span class="string">'12px'</span>;
+td.style.border = <span class="string">'1px solid #334155'</span>;</pre>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="right-column">
+                
+                <div class="card border-cyan card-preview">
+                    <h2 class="card-title"><i class="fa-solid fa-laptop-code"></i> Generated Table Preview</h2>
+                    <div class="preview-container" id="tablePreviewContainer">
+                        </div>
+                </div>
+
+                <div class="card border-orange">
+                    <h2 class="card-title"><i class="fa-solid fa-cube"></i> Dynamic Generation Code</h2>
+                    <div class="code-block">
+                        <pre><span class="keyword">const</span> data = [
+  [<span class="string">'1'</span>, <span class="string">'John Doe'</span>, <span class="string">'Developer'</span>, <span class="string">'Active'</span>],
+  [<span class="string">'2'</span>, <span class="string">'Jane Smith'</span>, <span class="string">'Designer'</span>, <span class="string">'Pending'</span>]
+];
+data.forEach(rowData => addRow(rowData));</pre>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+
+    <script src="main.js"></script>
+</body>
+
+</html>
